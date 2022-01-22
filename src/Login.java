@@ -3,24 +3,25 @@ import java.awt.Image;
 
 import javax.swing.*;
 import java.sql.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 
-public class Login {
+public class Login
+{
 
 	private JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(() -> {
-			try {
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(() ->
+		{
+			try
+			{
 				Login window = new Login();
 				window.frame.setVisible(true);
-			} catch (Exception e) {
+			}
+			catch (Exception e)
+			{
 				e.printStackTrace();
 			}
 		});
@@ -28,17 +29,17 @@ public class Login {
 
 	private JLabel lblNewLabel_1;
 	private JLabel lblpic1;
-	/**
-	 * Create the application.
-	 */
-	public Login() {
+
+	public Login()
+	{
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()
+	{
 		frame = new JFrame();
 		frame.setBounds(100, 100, 918, 555);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,13 +54,11 @@ public class Login {
 		btnContinue.setFont(new Font("Tahoma", Font.BOLD, 14));
 		Image img6 = new ImageIcon(this.getClass().getResource("/admin_icon_1.png")).getImage();
 		btnContinue.setIcon(new ImageIcon(img6));
-		btnContinue.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				frame.dispose();
-				LoginFrame loginFrame = new LoginFrame();
-				loginFrame.setVisible(true);
-			}
+		btnContinue.addActionListener(e ->
+		{
+			frame.dispose();
+			LoginFrame loginFrame = new LoginFrame();
+			loginFrame.setVisible(true);
 		});
 		btnContinue.setBounds(320, 410, 276, 44);
 		frame.getContentPane().add(btnContinue);
