@@ -53,6 +53,7 @@ public class AdminInfo extends JFrame
 
 
 	// Refreshes the table at the point of call
+	// Possible Exception: SQLException
 	public void refreshTable()
 	{
 		try
@@ -169,16 +170,19 @@ public class AdminInfo extends JFrame
 		lblNewLabel.setBounds(720, 482, 184, 31);
 		contentPane.add(lblNewLabel);
 
+		// Label for the title of the app
 		lblNewLabel_1 = new JLabel("BookShop Automation Software ");
 		lblNewLabel_1.setFont(new Font("Rockwell Condensed", Font.BOLD, 22));
 		lblNewLabel_1.setBounds(239, 10, 401, 43);
 		contentPane.add(lblNewLabel_1);
 
+		// Admin Registration Label
 		lblNewLabel_2 = new JLabel("New Admin Registration :");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblNewLabel_2.setBounds(10, 106, 268, 40);
 		contentPane.add(lblNewLabel_2);
 
+		// Back Button
 		btnBack = new JButton("Back");
 		btnBack.setFont(new Font("Dialog", Font.BOLD, 14));
 		btnBack.addActionListener(e ->
@@ -192,12 +196,15 @@ public class AdminInfo extends JFrame
 		btnBack.setBounds(10, 480, 91, 28);
 		contentPane.add(btnBack);
 
+		// Image initialization + Padding
 		lblNewLabel_3 = new JLabel("");
 		Image img2 = new ImageIcon(this.getClass().getResource("/lock_icon_1.png")).getImage();
 		lblNewLabel_3.setIcon(new ImageIcon(img2));
 		lblNewLabel_3.setBounds(277, 138, 200, 353);
 		contentPane.add(lblNewLabel_3);
 
+		// Button for saving to the database
+		// Possible Exceptions: SQL Exception are handled
 		JButton btnNewButton = new JButton("Save");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.addActionListener(e ->
@@ -226,6 +233,8 @@ public class AdminInfo extends JFrame
 		btnNewButton.setBounds(98, 374, 85, 21);
 		contentPane.add(btnNewButton);
 
+		// Delete Entry Button
+		// Possible Exceptions: SQL Exception are handled
 		JButton btnDelete =new JButton("Delete Entry");
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnDelete.addActionListener( e ->
